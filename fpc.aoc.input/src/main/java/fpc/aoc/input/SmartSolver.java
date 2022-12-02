@@ -1,17 +1,12 @@
 package fpc.aoc.input;
 
-import com.google.common.collect.ImmutableList;
+import fpc.aoc.api.*;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import fpc.aoc.api.AOCProblem;
-import fpc.aoc.api.Day;
-import fpc.aoc.api.Part;
-import fpc.aoc.api.Solver;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Stream;
 
 @RequiredArgsConstructor
 public abstract class SmartSolver<I,S> implements Solver<I,S> {
@@ -42,14 +37,11 @@ public abstract class SmartSolver<I,S> implements Solver<I,S> {
      * @return an {@link AOCProblem} using this solver and the resources associated as input
      */
     public @NonNull AOCProblem<S> createProblem() {
-        return AOCProblemUsingSolver.create(this, this.getConverter());
-    }
-
-    /**
-     * @return an {@link AOCProblem} using this solver and the provided lines as input
-     */
-    public @NonNull AOCProblem<S> createProblem(@NonNull ImmutableList<String> lines) {
-        return AOCProblemUsingSolver.create(this, new ListOfLines(lines), this.getConverter());
+        final var problem = AOCProblemUsingSolver.create(this, this.getConverter());
+        if (this.isSkipped()) {
+            return new SkippedAOCProblem<>(problem);
+        }
+        return problem;
     }
 
     /**
@@ -58,13 +50,5 @@ public abstract class SmartSolver<I,S> implements Solver<I,S> {
     public @NonNull AOCProblem<S> createProblem(@NonNull String multiLines) {
         return AOCProblemUsingSolver.create(this, new MultiLines(multiLines), this.getConverter());
     }
-
-    /**
-     * @return an {@link AOCProblem} using this solver and the provided multi lines as input
-     */
-    public @NonNull AOCProblem<S> createProblem(@NonNull Input<Stream<String>> input) {
-        return AOCProblemUsingSolver.create(this, input, this.getConverter());
-    }
-
 
 }

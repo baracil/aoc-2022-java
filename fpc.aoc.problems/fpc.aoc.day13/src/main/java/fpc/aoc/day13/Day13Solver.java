@@ -1,18 +1,15 @@
 package fpc.aoc.day13;
 
-import fpc.aoc.day13.struct.Input;
-import lombok.NonNull;
 import fpc.aoc.input.Converter;
 import fpc.aoc.input.SmartSolver;
+import lombok.NonNull;
 
 import java.util.stream.Stream;
 
-public abstract class Day13Solver extends SmartSolver<Input,String> {
+public abstract class Day13Solver extends SmartSolver<Stream<String>,String> {
 
     @Override
-    protected @NonNull Converter<Input> getConverter() {
-        return Converter.IDENTITY.andThen(s -> s.collect(Input.COLLECTOR));
+    protected @NonNull Converter<Stream<String>> getConverter() {
+        return Converter.IDENTITY;
     }
-
-
 }

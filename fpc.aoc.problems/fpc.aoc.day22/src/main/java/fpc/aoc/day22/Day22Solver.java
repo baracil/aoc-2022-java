@@ -1,8 +1,8 @@
 package fpc.aoc.day22;
 
-import lombok.NonNull;
 import fpc.aoc.input.Converter;
 import fpc.aoc.input.SmartSolver;
+import lombok.NonNull;
 
 import java.util.stream.Stream;
 

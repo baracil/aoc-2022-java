@@ -1,7 +1,7 @@
 package fpc.aoc.day5;
 
 import fpc.aoc.api.AOCProblem;
-import fpc.aoc.day5.struct.Vent;
+import fpc.aoc.common.NotSolvedYet;
 import lombok.NonNull;
 
 import java.util.stream.Stream;
@@ -13,7 +13,12 @@ public class Day5Part2Solver extends Day5Solver {
     }
 
     @Override
-    public @NonNull String solve(@NonNull Stream<Vent> input) {
-        return solve(input, v -> true);
+    public boolean isSkipped() {
+        return true;
+    }
+
+    @Override
+    public @NonNull String solve(@NonNull Stream<String> input) {
+        throw new NotSolvedYet();
     }
 }

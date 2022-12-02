@@ -16,7 +16,7 @@
     <name>${project.name} - ${module.name} : ${submodule.name}</name>
 
     <properties>
-        <submodule.name>10</submodule.name>
+        <submodule.name>04</submodule.name>
     </properties>
 
     <dependencies>

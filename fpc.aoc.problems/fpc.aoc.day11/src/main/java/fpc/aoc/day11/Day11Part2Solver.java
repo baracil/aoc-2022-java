@@ -1,8 +1,8 @@
 package fpc.aoc.day11;
 
-import lombok.NonNull;
 import fpc.aoc.api.AOCProblem;
 import fpc.aoc.common.NotSolvedYet;
+import lombok.NonNull;
 
 import java.util.stream.Stream;
 
@@ -13,15 +13,12 @@ public class Day11Part2Solver extends Day11Solver {
     }
 
     @Override
-    public @NonNull String solve(@NonNull Map map) {
-        int step = 0;
-        do {
-            step +=1;
-            if (map.executeOneStep()) {
-                return String.valueOf(step);
-            }
-        } while (true);
+    public boolean isSkipped() {
+        return true;
+    }
 
-
+    @Override
+    public @NonNull String solve(@NonNull Stream<String> input) {
+        throw new NotSolvedYet();
     }
 }

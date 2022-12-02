@@ -1,9 +1,10 @@
 package fpc.aoc.day12;
 
 import fpc.aoc.api.AOCProblem;
-import fpc.aoc.day12.struct.Part2RecursiveMode;
-import fpc.aoc.day12.struct.RecursiveMode;
+import fpc.aoc.common.NotSolvedYet;
 import lombok.NonNull;
+
+import java.util.stream.Stream;
 
 public class Day12Part2Solver extends Day12Solver {
 
@@ -12,7 +13,12 @@ public class Day12Part2Solver extends Day12Solver {
     }
 
     @Override
-    protected RecursiveMode getRecursiveMode() {
-        return new Part2RecursiveMode();
+    public boolean isSkipped() {
+        return true;
+    }
+
+    @Override
+    public @NonNull String solve(@NonNull Stream<String> input) {
+        throw new NotSolvedYet();
     }
 }

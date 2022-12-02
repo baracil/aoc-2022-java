@@ -13,6 +13,11 @@ public class Day3Part1Solver extends Day3Solver {
     }
 
     @Override
+    public boolean isSkipped() {
+        return true;
+    }
+
+    @Override
     public @NonNull String solve(@NonNull Stream<String> input) {
         throw new NotSolvedYet();
     }

@@ -2,7 +2,6 @@ package fpc.oac.day4;
 
 import fpc.aoc.day4.Day4Part1Solver;
 import fpc.aoc.day4.Day4Part2Solver;
-import fpc.aoc.day4.struct.Day04Input;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

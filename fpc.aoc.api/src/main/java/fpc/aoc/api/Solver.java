@@ -8,4 +8,7 @@ public interface Solver<I,S> {
     @NonNull Day day();
     @NonNull Part part();
 
+    default boolean isSkipped() {
+        return false;
+    }
 }

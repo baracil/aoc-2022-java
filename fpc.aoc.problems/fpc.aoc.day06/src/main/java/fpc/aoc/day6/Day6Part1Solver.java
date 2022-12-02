@@ -1,9 +1,8 @@
 package fpc.aoc.day6;
 
-import fpc.aoc.day6.struct.School;
-import lombok.NonNull;
 import fpc.aoc.api.AOCProblem;
 import fpc.aoc.common.NotSolvedYet;
+import lombok.NonNull;
 
 import java.util.stream.Stream;
 
@@ -14,7 +13,12 @@ public class Day6Part1Solver extends Day6Solver {
     }
 
     @Override
-    public @NonNull String solve(@NonNull School input) {
-        return input.compute_population(GEN_80).toString();
+    public boolean isSkipped() {
+        return true;
+    }
+
+    @Override
+    public @NonNull String solve(@NonNull Stream<String> input) {
+        throw new NotSolvedYet();
     }
 }

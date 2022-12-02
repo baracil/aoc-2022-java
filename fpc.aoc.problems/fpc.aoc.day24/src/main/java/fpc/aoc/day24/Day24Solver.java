@@ -1,8 +1,8 @@
 package fpc.aoc.day24;
 
-import lombok.NonNull;
 import fpc.aoc.input.Converter;
 import fpc.aoc.input.SmartSolver;
+import lombok.NonNull;
 
 import java.util.stream.Stream;
 
@@ -12,5 +12,4 @@ public abstract class Day24Solver extends SmartSolver<Stream<String>,String> {
     protected @NonNull Converter<Stream<String>> getConverter() {
         return Converter.IDENTITY;
     }
-
 }

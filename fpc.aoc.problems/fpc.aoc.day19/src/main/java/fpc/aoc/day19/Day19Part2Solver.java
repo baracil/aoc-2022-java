@@ -1,15 +1,10 @@
 package fpc.aoc.day19;
 
-import com.google.common.collect.ImmutableList;
 import fpc.aoc.api.AOCProblem;
-import fpc.aoc.common.IntPair;
-import fpc.aoc.common.Pair;
-import fpc.aoc.day19.struct.Match;
-import fpc.aoc.day19.struct.Report;
-import fpc.aoc.day19.struct.ReportMerger;
+import fpc.aoc.common.NotSolvedYet;
 import lombok.NonNull;
 
-import java.util.Optional;
+import java.util.stream.Stream;
 
 public class Day19Part2Solver extends Day19Solver {
 
@@ -18,19 +13,12 @@ public class Day19Part2Solver extends Day19Solver {
     }
 
     @Override
-    public @NonNull Integer solve(@NonNull ImmutableList<Report> input) {
-        final var report = ReportMerger.merge(input);
+    public boolean isSkipped() {
+        return true;
+    }
 
-        final var offsets = input.stream()
-                                 .map(report::findMatching)
-                                 .flatMap(Optional::stream)
-                                 .map(Match::offset)
-                                 .collect(ImmutableList.toImmutableList());
-
-        return IntPair.cartesian(offsets.size())
-                      .filter(p -> p.first() < p.second())
-                      .map(p -> Pair.extract(offsets, p))
-                      .mapToInt(pair -> pair.first().manhattan(pair.second()))
-                      .max().orElse(0);
+    @Override
+    public @NonNull String solve(@NonNull Stream<String> input) {
+        throw new NotSolvedYet();
     }
 }

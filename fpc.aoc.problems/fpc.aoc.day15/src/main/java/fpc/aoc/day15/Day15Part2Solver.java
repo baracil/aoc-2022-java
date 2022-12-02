@@ -1,8 +1,8 @@
 package fpc.aoc.day15;
 
-import lombok.NonNull;
 import fpc.aoc.api.AOCProblem;
 import fpc.aoc.common.NotSolvedYet;
+import lombok.NonNull;
 
 import java.util.stream.Stream;
 
@@ -13,7 +13,12 @@ public class Day15Part2Solver extends Day15Solver {
     }
 
     @Override
-    protected int getNbRepetitions() {
-        return 5;
+    public boolean isSkipped() {
+        return true;
+    }
+
+    @Override
+    public @NonNull String solve(@NonNull Stream<String> input) {
+        throw new NotSolvedYet();
     }
 }

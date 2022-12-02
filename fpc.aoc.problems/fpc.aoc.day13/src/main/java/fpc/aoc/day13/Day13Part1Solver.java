@@ -1,9 +1,8 @@
 package fpc.aoc.day13;
 
-import fpc.aoc.day13.struct.Input;
-import lombok.NonNull;
 import fpc.aoc.api.AOCProblem;
 import fpc.aoc.common.NotSolvedYet;
+import lombok.NonNull;
 
 import java.util.stream.Stream;
 
@@ -14,11 +13,12 @@ public class Day13Part1Solver extends Day13Solver {
     }
 
     @Override
-    public @NonNull String solve(@NonNull Input input) {
-        final var fold = input.folds().get(0);
+    public boolean isSkipped() {
+        return true;
+    }
 
-        final var sheet = input.sheet().fold(fold);
-
-        return String.valueOf(sheet.getNumberOfDots());
+    @Override
+    public @NonNull String solve(@NonNull Stream<String> input) {
+        throw new NotSolvedYet();
     }
 }

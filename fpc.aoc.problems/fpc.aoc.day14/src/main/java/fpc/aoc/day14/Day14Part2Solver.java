@@ -1,10 +1,8 @@
 package fpc.aoc.day14;
 
-import fpc.aoc.day14.struct.Counter;
-import fpc.aoc.day14.struct.Input;
-import lombok.NonNull;
 import fpc.aoc.api.AOCProblem;
 import fpc.aoc.common.NotSolvedYet;
+import lombok.NonNull;
 
 import java.util.stream.Stream;
 
@@ -15,9 +13,12 @@ public class Day14Part2Solver extends Day14Solver {
     }
 
     @Override
-    public @NonNull String solve(@NonNull Input input) {
-        final var counter = new Counter(input.template(), input.rules());
-        return String.valueOf(counter.compute(40));
+    public boolean isSkipped() {
+        return true;
     }
 
+    @Override
+    public @NonNull String solve(@NonNull Stream<String> input) {
+        throw new NotSolvedYet();
+    }
 }

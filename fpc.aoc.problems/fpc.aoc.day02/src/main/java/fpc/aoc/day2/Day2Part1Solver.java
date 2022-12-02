@@ -3,8 +3,6 @@ package fpc.aoc.day2;
 import fpc.aoc.api.AOCProblem;
 import lombok.NonNull;
 
-import java.util.stream.Stream;
-
 public class Day2Part1Solver extends Day2Solver {
 
     public static @NonNull AOCProblem<?> provider() {

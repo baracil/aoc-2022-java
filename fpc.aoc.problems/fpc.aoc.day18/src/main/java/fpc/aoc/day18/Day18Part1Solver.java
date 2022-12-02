@@ -1,9 +1,8 @@
 package fpc.aoc.day18;
 
-import fpc.aoc.day18.struct.Number;
-import lombok.NonNull;
 import fpc.aoc.api.AOCProblem;
 import fpc.aoc.common.NotSolvedYet;
+import lombok.NonNull;
 
 import java.util.stream.Stream;
 
@@ -14,7 +13,12 @@ public class Day18Part1Solver extends Day18Solver {
     }
 
     @Override
-    public @NonNull Long solve(@NonNull Stream<Number> input) {
-        return input.reduce(Number.NIL, Number::add).magnitude();
+    public boolean isSkipped() {
+        return true;
+    }
+
+    @Override
+    public @NonNull String solve(@NonNull Stream<String> input) {
+        throw new NotSolvedYet();
     }
 }

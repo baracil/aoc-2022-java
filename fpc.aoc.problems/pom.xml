@@ -24,28 +24,28 @@
         <module>fpc.aoc.day01</module>
         <module>fpc.aoc.day02</module>
         <module>fpc.aoc.day03</module>
-<!--        <module>fpc.aoc.day04</module>-->
-<!--        <module>fpc.aoc.day05</module>-->
-<!--        <module>fpc.aoc.day06</module>-->
-<!--        <module>fpc.aoc.day07</module>-->
-<!--        <module>fpc.aoc.day08</module>-->
-<!--        <module>fpc.aoc.day09</module>-->
-<!--        <module>fpc.aoc.day10</module>-->
-<!--        <module>fpc.aoc.day11</module>-->
-<!--        <module>fpc.aoc.day12</module>-->
-<!--        <module>fpc.aoc.day13</module>-->
-<!--        <module>fpc.aoc.day14</module>-->
-<!--        <module>fpc.aoc.day15</module>-->
-<!--        <module>fpc.aoc.day16</module>-->
-<!--        <module>fpc.aoc.day17</module>-->
-<!--        <module>fpc.aoc.day18</module>-->
-<!--        <module>fpc.aoc.day19</module>-->
-<!--        <module>fpc.aoc.day20</module>-->
-<!--        <module>fpc.aoc.day21</module>-->
-<!--        <module>fpc.aoc.day22</module>-->
-<!--        <module>fpc.aoc.day23</module>-->
-<!--        <module>fpc.aoc.day24</module>-->
-<!--        <module>fpc.aoc.day25</module>-->
+        <module>fpc.aoc.day04</module>
+        <module>fpc.aoc.day05</module>
+        <module>fpc.aoc.day06</module>
+        <module>fpc.aoc.day07</module>
+        <module>fpc.aoc.day08</module>
+        <module>fpc.aoc.day09</module>
+        <module>fpc.aoc.day10</module>
+        <module>fpc.aoc.day11</module>
+        <module>fpc.aoc.day12</module>
+        <module>fpc.aoc.day13</module>
+        <module>fpc.aoc.day14</module>
+        <module>fpc.aoc.day15</module>
+        <module>fpc.aoc.day16</module>
+        <module>fpc.aoc.day17</module>
+        <module>fpc.aoc.day18</module>
+        <module>fpc.aoc.day19</module>
+        <module>fpc.aoc.day20</module>
+        <module>fpc.aoc.day21</module>
+        <module>fpc.aoc.day22</module>
+        <module>fpc.aoc.day23</module>
+        <module>fpc.aoc.day24</module>
+        <module>fpc.aoc.day25</module>
     </modules>
 
 </project>

@@ -5,10 +5,10 @@ import fpc.aoc.day11.Day11Part2Solver;
 module fpc.aoc.day11 {
     requires static lombok;
 
-    requires fpc.aoc.input;
     requires com.google.common;
+    requires fpc.aoc.input;
 
     exports fpc.aoc.day11;
 
-//    provides AOCProblem with Day11Part1Solver, Day11Part2Solver;
+    provides AOCProblem with Day11Part1Solver, Day11Part2Solver;
 }
