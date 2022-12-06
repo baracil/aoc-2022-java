@@ -1,15 +1,34 @@
 package fpc.aoc.day6;
 
+import fpc.aoc.common.AOCException;
 import fpc.aoc.input.Converter;
 import fpc.aoc.input.SmartSolver;
 import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
-import java.util.stream.Stream;
-
-public abstract class Day6Solver extends SmartSolver<Stream<String>,String> {
+@RequiredArgsConstructor
+public abstract class Day6Solver extends SmartSolver<String,Integer> {
 
     @Override
-    protected @NonNull Converter<Stream<String>> getConverter() {
-        return Converter.IDENTITY;
+    protected @NonNull Converter<String> getConverter() {
+        return Converter.FIRST_LINE;
     }
+
+    private final int markerLength;
+
+    @Override
+    public @NonNull Integer solve(@NonNull String input) {
+        final var finder = new MarkerFinder(markerLength);
+
+        for (int i = 0; i < input.length(); i++) {
+            final var chr =  input.charAt(i);
+            final var idx = finder.handleChar(chr);
+            if (idx.isPresent()) {
+                return idx.get();
+            }
+        }
+
+        throw new AOCException("Cannot solve!");
+    }
+
 }
