@@ -2,7 +2,6 @@ package fpc.aoc.day6;
 
 import lombok.NonNull;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -31,7 +30,7 @@ public class Day6Test {
     }
 
     @ParameterizedTest
-    @MethodSource("testDay6Part2")
+    @MethodSource("testDay6Part1")
     public void testPart1(@NonNull String line, int expected) {
         final var actual = new Day6Part1Solver().createProblem(line).solve();
         Assertions.assertEquals(expected,actual);
