@@ -1,10 +1,7 @@
 package fpc.aoc.day7;
 
 import fpc.aoc.api.AOCProblem;
-import fpc.aoc.common.NotSolvedYet;
 import lombok.NonNull;
-
-import java.util.stream.Stream;
 
 public class Day7Part1Solver extends Day7Solver {
 
@@ -13,12 +10,11 @@ public class Day7Part1Solver extends Day7Solver {
     }
 
     @Override
-    public boolean isSkipped() {
-        return true;
-    }
+    public @NonNull Integer solve(@NonNull FileSystem fileSystem) {
 
-    @Override
-    public @NonNull String solve(@NonNull Stream<String> input) {
-        throw new NotSolvedYet();
+        return fileSystem.streamDirectories()
+            .mapToInt(File.Folder::size)
+            .filter(size -> size <= 100000)
+            .sum();
     }
 }

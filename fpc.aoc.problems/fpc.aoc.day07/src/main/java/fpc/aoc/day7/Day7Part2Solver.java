@@ -1,10 +1,10 @@
 package fpc.aoc.day7;
 
 import fpc.aoc.api.AOCProblem;
-import fpc.aoc.common.NotSolvedYet;
+import fpc.aoc.common.AOCException;
 import lombok.NonNull;
 
-import java.util.stream.Stream;
+import java.util.Comparator;
 
 public class Day7Part2Solver extends Day7Solver {
 
@@ -13,12 +13,15 @@ public class Day7Part2Solver extends Day7Solver {
     }
 
     @Override
-    public boolean isSkipped() {
-        return true;
-    }
+    public @NonNull Integer solve(@NonNull FileSystem fileSystem) {
+        final var freeSpace = fileSystem.getFreeSpace();
+        final var missingSpace = 30_000_000 - freeSpace;
 
-    @Override
-    public @NonNull String solve(@NonNull Stream<String> input) {
-        throw new NotSolvedYet();
+        final var folderToSuppress = fileSystem.streamDirectories()
+            .filter(folder -> folder.size()>missingSpace)
+            .min(Comparator.comparing(File.Folder::size))
+            .orElseThrow(() -> new AOCException("Too stupid to solve this problem"));
+
+        return folderToSuppress.size();
     }
 }
