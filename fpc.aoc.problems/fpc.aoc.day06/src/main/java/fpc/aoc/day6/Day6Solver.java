@@ -20,11 +20,12 @@ public abstract class Day6Solver extends SmartSolver<String,Integer> {
     public @NonNull Integer solve(@NonNull String input) {
         final var finder = new MarkerFinder(markerLength);
 
+
         for (int i = 0; i < input.length(); i++) {
             final var chr =  input.charAt(i);
-            final var idx = finder.handleChar(chr);
-            if (idx.isPresent()) {
-                return idx.get();
+            finder.handleChar(chr);
+            if (finder.found()) {
+                return finder.idx();
             }
         }
 

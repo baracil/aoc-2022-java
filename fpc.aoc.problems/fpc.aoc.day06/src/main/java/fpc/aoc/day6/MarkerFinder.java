@@ -1,17 +1,19 @@
 package fpc.aoc.day6;
 
-import lombok.NonNull;
+import lombok.Getter;
 
 import java.util.Arrays;
-import java.util.Optional;
 
 public class MarkerFinder {
 
   private final int dataMarkerLength;
   private final int[] current;
   private final int[] counts;
+  @Getter
   private int idx;
   private int nbDistinct;
+  @Getter
+  private boolean found = false;
 
   public MarkerFinder(int dataMarkerLength) {
     this.dataMarkerLength = dataMarkerLength;
@@ -20,7 +22,7 @@ public class MarkerFinder {
     Arrays.fill(this.current,-1);
   }
 
-  public @NonNull Optional<Integer> handleChar(char c) {
+  public void handleChar(char c) {
     final int countIndexToIncrease = c -'a';
     final int countIndexToDecrease = this.current[idx%dataMarkerLength];
     this.current[idx%dataMarkerLength] = countIndexToIncrease;
@@ -32,8 +34,9 @@ public class MarkerFinder {
       increase(countIndexToIncrease);
     }
 
-    return nbDistinct == dataMarkerLength? Optional.of(idx):Optional.empty();
+    found = nbDistinct == dataMarkerLength;
   }
+
 
   private void decrease(int countIndex) {
     if (countIndex<0) {
