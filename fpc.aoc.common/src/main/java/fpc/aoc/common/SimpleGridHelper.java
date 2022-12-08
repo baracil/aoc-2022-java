@@ -1,8 +1,5 @@
 package fpc.aoc.common;
 
-import fpc.aoc.common.Displacement;
-import fpc.aoc.common.GridHelper;
-import fpc.aoc.common.Position;
 import lombok.Getter;
 import lombok.NonNull;
 
@@ -39,6 +36,11 @@ public class SimpleGridHelper implements GridHelper {
     }
 
     @Override
+    public boolean isOnBorder(Position position) {
+        return position.x() == 0 || position.x() == width-1 || position.y() == 0 || position.y() == height-1;
+    }
+
+    @Override
     public @NonNull Stream<Position> allAdjacentPosition(@NonNull Position center) {
         final int xc = center.x();
         final int yc = center.y();
@@ -63,7 +65,7 @@ public class SimpleGridHelper implements GridHelper {
                         .takeWhile(Objects::nonNull);
     }
 
-    public @NonNull Stream<Position> allPositionOnGrid() {
+    public @NonNull Stream<Position> allPositionsOnGrid() {
         return Arrays.stream(positions);
     }
 

@@ -6,6 +6,7 @@ import lombok.NonNull;
 import java.util.Arrays;
 import java.util.function.IntUnaryOperator;
 import java.util.stream.Collector;
+import java.util.stream.Stream;
 
 /**
  * @author Bastien Aracil
@@ -16,6 +17,10 @@ public interface ArrayOfChar extends Array, ArrayOfCharReader {
     static @NonNull ArrayOfChar from(@NonNull String data, char filling) {
         return Arrays.stream(data.split("\n"))
                 .collect(ArrayOfChar.collector(filling));
+    }
+
+    static @NonNull ArrayOfChar from(@NonNull Stream<String> streamOfLines, char filling) {
+        return streamOfLines.collect(ArrayOfChar.collector(filling));
     }
 
     static @NonNull ArrayOfChar from(@NonNull ImmutableList<String> data, char filling) {

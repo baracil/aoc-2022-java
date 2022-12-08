@@ -29,11 +29,13 @@ public interface GridHelper {
      */
     @NonNull Stream<Position> allAdjacentPosition(@NonNull Position center);
 
-    @NonNull Stream<Position> allPositionOnGrid();
+    @NonNull Stream<Position> allPositionsOnGrid();
 
     int linearIndexFor(@NonNull Position position);
 
     @NonNull Position positionFor(int linearIndex);
 
     @NonNull Stream<Position> positionsInDirection(@NonNull Position center, @NonNull Displacement displacement);
+
+    boolean isOnBorder(Position position);
 }
