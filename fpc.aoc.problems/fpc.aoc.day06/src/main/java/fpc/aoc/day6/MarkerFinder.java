@@ -19,38 +19,30 @@ public class MarkerFinder {
     this.dataMarkerLength = dataMarkerLength;
     this.current = new int[dataMarkerLength];
     this.counts = new int[26];
-    Arrays.fill(this.current,-1);
+    Arrays.fill(this.current, -1);
   }
 
   public void handleChar(char c) {
-    final int countIndexToIncrease = c -'a';
-    final int countIndexToDecrease = this.current[idx%dataMarkerLength];
-    this.current[idx%dataMarkerLength] = countIndexToIncrease;
+    final int countIndexToIncrease = c - 'a';
+    final int countIndexToDecrease = this.current[idx % dataMarkerLength];
+    this.current[idx % dataMarkerLength] = countIndexToIncrease;
 
     idx++;
 
     if (countIndexToDecrease != countIndexToIncrease) {
-      decrease(countIndexToDecrease);
-      increase(countIndexToIncrease);
+      updateCount(countIndexToDecrease, -1);
+      updateCount(countIndexToIncrease, +1);
     }
 
     found = nbDistinct == dataMarkerLength;
   }
 
 
-  private void decrease(int countIndex) {
-    if (countIndex<0) {
-      return;
-    }
-    final var currentCount = this.counts[countIndex];
-    this.counts[countIndex] = currentCount-1;
-    this.handleModification(currentCount,currentCount-1);
-  }
-
-  private void increase(int countIndex) {
-    final var currentCount = this.counts[countIndex];
-    this.counts[countIndex] = currentCount+1;
-    this.handleModification(currentCount,currentCount+1);
+  private void updateCount(int countIndex, int delta) {
+    final var oldCount = this.counts[countIndex];
+    final var newCount = oldCount + delta;
+    this.counts[countIndex] = newCount;
+    this.handleModification(oldCount, newCount);
   }
 
   private void handleModification(int oldCount, int newCount) {
