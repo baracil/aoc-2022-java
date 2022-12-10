@@ -1,24 +1,20 @@
 package fpc.aoc.day10;
 
+import com.google.common.collect.ImmutableList;
 import fpc.aoc.api.AOCProblem;
-import fpc.aoc.common.NotSolvedYet;
 import lombok.NonNull;
 
-import java.util.stream.Stream;
-
-public class Day10Part2Solver extends Day10Solver {
+public class Day10Part2Solver extends Day10Solver<String> {
 
     public static @NonNull AOCProblem<?> provider() {
         return new Day10Part2Solver().createProblem();
     }
 
     @Override
-    public boolean isSkipped() {
-        return true;
-    }
+    public @NonNull String solve(@NonNull ImmutableList<Command> input) {
+        final var videoSystem = new VideoSystem();
 
-    @Override
-    public @NonNull String solve(@NonNull Stream<String> input) {
-        throw new NotSolvedYet();
+        videoSystem.execute(new CommandProvider(input));
+        return videoSystem.dumpDisplay();
     }
 }
