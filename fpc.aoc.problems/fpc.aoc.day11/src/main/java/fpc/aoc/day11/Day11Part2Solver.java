@@ -1,24 +1,26 @@
 package fpc.aoc.day11;
 
+import com.google.common.collect.ImmutableList;
 import fpc.aoc.api.AOCProblem;
-import fpc.aoc.common.NotSolvedYet;
 import lombok.NonNull;
 
-import java.util.stream.Stream;
+import java.util.function.LongUnaryOperator;
 
 public class Day11Part2Solver extends Day11Solver {
 
-    public static @NonNull AOCProblem<?> provider() {
-        return new Day11Part2Solver().createProblem();
-    }
+  public static @NonNull AOCProblem<?> provider() {
+    return new Day11Part2Solver().createProblem();
+  }
 
-    @Override
-    public boolean isSkipped() {
-        return true;
-    }
 
-    @Override
-    public @NonNull String solve(@NonNull Stream<String> input) {
-        throw new NotSolvedYet();
-    }
+  @Override
+  protected int getNumberOfTurns() {
+    return 10_000;
+  }
+
+  @Override
+  protected LongUnaryOperator createPostOperation(@NonNull ImmutableList<ParsedMonkey> parsedMonkeys) {
+    final var mod = parsedMonkeys.stream().mapToInt(ParsedMonkey::divisor).reduce(1, (a, b) -> a * b);
+    return i -> i % mod;
+  }
 }
