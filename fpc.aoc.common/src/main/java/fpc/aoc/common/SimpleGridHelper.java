@@ -29,7 +29,7 @@ public class SimpleGridHelper implements GridHelper {
     }
 
 
-    public Position at(int x, int y) {
+    public @NonNull Position at(int x, int y) {
         if (x >= 0 && x < width && y >= 0 && y < height) {
             return positions[x + y * width];
         }
@@ -59,6 +59,18 @@ public class SimpleGridHelper implements GridHelper {
                 nullableAt(xc + 1, yc - 1),
                 nullableAt(xc + 1, yc),
                 nullableAt(xc + 1, yc + 1),
+                nullableAt(xc, yc - 1),
+                nullableAt(xc, yc + 1)
+        ).filter(Objects::nonNull);
+    }
+
+    @Override
+    public @NonNull Stream<Position> allCardinalNeighbours(@NonNull Position center) {
+        final int xc = center.x();
+        final int yc = center.y();
+        return Stream.of(
+                nullableAt(xc - 1, yc),
+                nullableAt(xc + 1, yc),
                 nullableAt(xc, yc - 1),
                 nullableAt(xc, yc + 1)
         ).filter(Objects::nonNull);

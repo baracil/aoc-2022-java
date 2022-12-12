@@ -3,7 +3,9 @@ package fpc.aoc.common;
 import com.google.common.collect.ImmutableList;
 import lombok.NonNull;
 
+import java.io.PrintStream;
 import java.util.Arrays;
+import java.util.Optional;
 import java.util.function.IntUnaryOperator;
 import java.util.stream.Collector;
 import java.util.stream.Stream;
@@ -66,6 +68,11 @@ public interface ArrayOfChar extends Array, ArrayOfCharReader {
         );
     }
 
+    @Override
+    default void printSingleElement(@NonNull PrintStream printStream, int x, int y) {
+        printStream.print(get(x,y));
+    }
+
     @NonNull String asString();
 
     @NonNull ArrayOfChar rotate(@NonNull Rotation rotation);
@@ -105,4 +112,6 @@ public interface ArrayOfChar extends Array, ArrayOfCharReader {
     }
 
     @NonNull ArrayOfChar transform(@NonNull Transformation transformation);
+
+    @NonNull Optional<Position> findMatching(char s);
 }

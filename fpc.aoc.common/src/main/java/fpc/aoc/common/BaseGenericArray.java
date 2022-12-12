@@ -2,8 +2,6 @@ package fpc.aoc.common;
 
 import lombok.NonNull;
 
-import java.io.PrintStream;
-
 public class BaseGenericArray<T> extends BaseArray implements GenericArray<T> {
 
     private final @NonNull T[] data;
@@ -26,9 +24,4 @@ public class BaseGenericArray<T> extends BaseArray implements GenericArray<T> {
         throw new IndexOutOfBoundsException("x="+x+" y="+y+"  width="+width()+" height="+height());
     }
 
-
-    @Override
-    protected void printSingleElement(@NonNull PrintStream printStream, int elementIndex) {
-        printStream.println(data[elementIndex]);
-    }
 }

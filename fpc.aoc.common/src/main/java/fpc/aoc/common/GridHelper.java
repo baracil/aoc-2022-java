@@ -29,6 +29,8 @@ public interface GridHelper {
      */
     @NonNull Stream<Position> allAdjacentPosition(@NonNull Position center);
 
+    @NonNull Stream<Position> allCardinalNeighbours(@NonNull Position center);
+
     @NonNull Stream<Position> allPositionsOnGrid();
 
     int linearIndexFor(@NonNull Position position);

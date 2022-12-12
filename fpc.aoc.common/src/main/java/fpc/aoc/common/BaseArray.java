@@ -1,13 +1,9 @@
 package fpc.aoc.common;
 
-import fpc.aoc.common.AOCException;
-import fpc.aoc.common.Array;
-import fpc.aoc.common.Position;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
-import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
@@ -45,22 +41,6 @@ public abstract class BaseArray implements Array {
     protected int positionToIndex(@NonNull Position position) {
         return xyToIndex(position.x(),position.y());
     }
-
-    public void printToStandardOutput() {
-        print(System.out);
-    }
-
-    public void print(@NonNull PrintStream printStream) {
-        int idx = 0;
-        for (int y = 0; y < height; y++) {
-            for (int x = 0; x < width; x++) {
-                printSingleElement(printStream,idx++);
-            }
-            printStream.println();
-        }
-    }
-
-    protected abstract void printSingleElement(@NonNull PrintStream printStream, int elementIndex);
 
     @NonNull
     public Stream<Position> positionStream() {

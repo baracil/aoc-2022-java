@@ -3,6 +3,7 @@ package fpc.aoc.common;
 import lombok.Getter;
 import lombok.NonNull;
 
+import java.util.Optional;
 import java.util.function.IntBinaryOperator;
 import java.util.function.UnaryOperator;
 
@@ -58,6 +59,18 @@ public class TransformedArrayOfChar extends AbstractArrayOfChar implements Array
 
 
         return delegate.get(ox, oy);
+    }
+
+    @Override
+    public @NonNull Optional<Position> findMatching(char s) {
+        for (int x = 0; x < width ; x++) {
+            for (int y = 0; y < height; y++) {
+                if (get(x,y) == s) {
+                    return Optional.of(Position.of(x, y));
+                }
+            }
+        }
+        return Optional.empty();
     }
 
     @Override
