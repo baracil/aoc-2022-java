@@ -28,7 +28,15 @@ public class SimpleGridHelper implements GridHelper {
         }
     }
 
-    private Position at(int x, int y) {
+
+    public Position at(int x, int y) {
+        if (x >= 0 && x < width && y >= 0 && y < height) {
+            return positions[x + y * width];
+        }
+        throw new IndexOutOfBoundsException();
+    }
+
+    private Position nullableAt(int x, int y) {
         if (x >= 0 && x < width && y >= 0 && y < height) {
             return positions[x + y * width];
         }
@@ -45,14 +53,14 @@ public class SimpleGridHelper implements GridHelper {
         final int xc = center.x();
         final int yc = center.y();
         return Stream.of(
-                at(xc - 1, yc - 1),
-                at(xc - 1, yc),
-                at(xc - 1, yc + 1),
-                at(xc + 1, yc - 1),
-                at(xc + 1, yc),
-                at(xc + 1, yc + 1),
-                at(xc, yc - 1),
-                at(xc, yc + 1)
+                nullableAt(xc - 1, yc - 1),
+                nullableAt(xc - 1, yc),
+                nullableAt(xc - 1, yc + 1),
+                nullableAt(xc + 1, yc - 1),
+                nullableAt(xc + 1, yc),
+                nullableAt(xc + 1, yc + 1),
+                nullableAt(xc, yc - 1),
+                nullableAt(xc, yc + 1)
         ).filter(Objects::nonNull);
     }
 
@@ -61,7 +69,7 @@ public class SimpleGridHelper implements GridHelper {
         final int dx = displacement.dx();
         final int dy = displacement.dy();
         return IntStream.iterate(1, i -> i + 1)
-                        .mapToObj(i -> at(center.x() + dx * i, center.y() + dy * i))
+                        .mapToObj(i -> nullableAt(center.x() + dx * i, center.y() + dy * i))
                         .takeWhile(Objects::nonNull);
     }
 
@@ -76,6 +84,6 @@ public class SimpleGridHelper implements GridHelper {
 
     @Override
     public @NonNull Position positionFor(int linearIndex) {
-        return at(linearIndex%width , linearIndex/width);
+        return nullableAt(linearIndex%width , linearIndex/width);
     }
 }

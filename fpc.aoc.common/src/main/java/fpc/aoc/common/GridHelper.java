@@ -38,4 +38,6 @@ public interface GridHelper {
     @NonNull Stream<Position> positionsInDirection(@NonNull Position center, @NonNull Displacement displacement);
 
     boolean isOnBorder(Position position);
+
+    @NonNull Position at(int x, int y);
 }
