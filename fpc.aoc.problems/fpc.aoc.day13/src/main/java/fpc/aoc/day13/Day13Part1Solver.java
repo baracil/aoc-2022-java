@@ -1,10 +1,8 @@
 package fpc.aoc.day13;
 
+import com.google.common.collect.ImmutableList;
 import fpc.aoc.api.AOCProblem;
-import fpc.aoc.common.NotSolvedYet;
 import lombok.NonNull;
-
-import java.util.stream.Stream;
 
 public class Day13Part1Solver extends Day13Solver {
 
@@ -12,13 +10,11 @@ public class Day13Part1Solver extends Day13Solver {
         return new Day13Part1Solver().createProblem();
     }
 
-    @Override
-    public boolean isSkipped() {
-        return true;
-    }
 
     @Override
-    public @NonNull String solve(@NonNull Stream<String> input) {
-        throw new NotSolvedYet();
+    public @NonNull Integer solve(@NonNull ImmutableList<PairOfItem> input) {
+        return input.stream()
+            .filter(PairOfItem::isInCorrectOrder)
+            .mapToInt(PairOfItem::index).sum();
     }
 }
