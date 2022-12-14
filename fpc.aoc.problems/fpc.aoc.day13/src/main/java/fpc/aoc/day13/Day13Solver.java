@@ -15,7 +15,7 @@ public abstract class Day13Solver extends SmartSolver<ImmutableList<PairOfItem>,
     return s -> {
       final var list = s
           .filter(Predicate.not(String::isEmpty))
-          .map(ItemParser::parse)
+          .map(ItemParserWithStack::parse)
           .toList();
       return IntStream.iterate(0, i -> i < list.size(), i -> i + 2)
           .mapToObj(i -> new PairOfItem(i / 2 + 1, list.get(i), list.get(i + 1)))

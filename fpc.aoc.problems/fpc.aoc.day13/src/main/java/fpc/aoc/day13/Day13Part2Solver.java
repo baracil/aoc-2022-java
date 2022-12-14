@@ -16,8 +16,8 @@ public class Day13Part2Solver extends Day13Solver {
 
     @Override
     public @NonNull Integer solve(@NonNull ImmutableList<PairOfItem> input) {
-        final var divider1 = ItemParser.parse("[[2]]");
-        final var divider2 = ItemParser.parse("[[6]]");
+        final var divider1 = ItemParserWithStack.parse("[[2]]");
+        final var divider2 = ItemParserWithStack.parse("[[6]]");
         final var sortedItems = Stream.concat(
                 input.stream().flatMap(PairOfItem::items),
                 Stream.of(divider1, divider2)

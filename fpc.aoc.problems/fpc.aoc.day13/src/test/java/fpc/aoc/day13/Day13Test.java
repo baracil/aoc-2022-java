@@ -45,8 +45,8 @@ public class Day13Test {
 
     @Test
     public void testPair2() {
-        final var item1 = ItemParser.parse("[[1],[2,3,4]]");
-        final var item2 = ItemParser.parse("[[1],4]");
+        final var item1 = ItemParserWithStack.parse("[[1],[2,3,4]]");
+        final var item2 = ItemParserWithStack.parse("[[1],4]");
         Assertions.assertTrue(item1.compareTo(item2) < 0);
     }
 

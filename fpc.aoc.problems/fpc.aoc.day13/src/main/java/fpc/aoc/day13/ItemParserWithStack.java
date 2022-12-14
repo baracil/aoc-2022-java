@@ -10,10 +10,10 @@ import java.util.Deque;
 import java.util.LinkedList;
 
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
-public class ItemParser {
+public class ItemParserWithStack {
 
   public static Item parse(String line) {
-    return new ItemParser(line).parse();
+    return new ItemParserWithStack(line).parse();
   }
 
 
