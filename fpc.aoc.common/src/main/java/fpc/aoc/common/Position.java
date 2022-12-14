@@ -39,4 +39,9 @@ public class Position {
     public String toString() {
         return "(x=" + x + ", y=" + y + ")";
     }
+
+    public static @NonNull Position parseCommaSeparated(@NonNull String value) {
+        final var idx = value.indexOf(",");
+        return Position.of(Integer.parseInt(value.substring(0,idx)),Integer.parseInt(value.substring(idx+1)));
+    }
 }
