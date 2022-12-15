@@ -44,4 +44,8 @@ public class Position {
         final var idx = value.indexOf(",");
         return Position.of(Integer.parseInt(value.substring(0,idx)),Integer.parseInt(value.substring(idx+1)));
     }
+
+    public int manhattanDistanceTo(Position beacon) {
+        return Math.abs(this.x - beacon.x) + Math.abs(this.y - beacon.y);
+    }
 }
