@@ -1,42 +1,34 @@
 package fpc.aoc.day16;
 
+import fpc.aoc.common.Tools;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class Day16Test {
 
     public static final String TEST_INPUT = """
-            7,4,9,5,11,17,23,2,0,14,21,24,10,16,13,6,15,25,12,22,18,20,8,19,3,26,1
-                        
-            22 13 17 11  0
-             8  2 23  4 24
-            21  9 14 16  7
-             6 10  3 18  5
-             1 12 20 15 19
-                        
-             3 15  0  2 22
-             9 18 13 17  5
-            19  8  7 25 23
-            20 11 10 24  4
-            14 21 16 12  6
-                        
-            14 21 17 24  4
-            10 16 15  9 19
-            18  8 23 26 20
-            22 11 13  6  5
-             2  0 12  3  7
+        Valve AA has flow rate=0; tunnels lead to valves DD, II, BB
+        Valve BB has flow rate=13; tunnels lead to valves CC, AA
+        Valve CC has flow rate=2; tunnels lead to valves DD, BB
+        Valve DD has flow rate=20; tunnels lead to valves CC, AA, EE
+        Valve EE has flow rate=3; tunnels lead to valves FF, DD
+        Valve FF has flow rate=0; tunnels lead to valves EE, GG
+        Valve GG has flow rate=0; tunnels lead to valves FF, HH
+        Valve HH has flow rate=22; tunnel leads to valve GG
+        Valve II has flow rate=0; tunnels lead to valves AA, JJ
+        Valve JJ has flow rate=21; tunnel leads to valve II
             """;
 
     @Test
     public void testPart1() {
         final var actual = new Day16Part1Solver().createProblem(TEST_INPUT).solve();
-        Assertions.assertEquals("4512",actual);
+        Assertions.assertEquals(1651,actual);
     }
 
     @Test
     public void testPart2() {
         final var actual = new Day16Part2Solver().createProblem(TEST_INPUT).solve();
-        Assertions.assertEquals("1924",actual);
+        Assertions.assertEquals(Tools.TODO(),actual);
     }
 
 

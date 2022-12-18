@@ -1,0 +1,26 @@
+@startdot
+graph valves {
+BB [label="BB\n13"]
+DD [label="DD\n20"]
+FF [label="FF\n0"]
+HH [label="HH\n22"]
+JJ [label="JJ\n21"]
+AA [label="AA\n0"]
+CC [label="CC\n2"]
+EE [label="EE\n3"]
+GG [label="GG\n0"]
+II [label="II\n0"]
+AA -- DD [label="1"]
+AA -- II [label="1"]
+AA -- BB [label="1"]
+BB -- CC [label="1"]
+CC -- DD [label="1"]
+DD -- EE [label="1"]
+EE -- FF [label="1"]
+FF -- GG [label="1"]
+GG -- HH [label="1"]
+II -- JJ [label="1"]
+}
+
+
+@enddot

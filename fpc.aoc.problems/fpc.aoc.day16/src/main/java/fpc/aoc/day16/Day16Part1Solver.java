@@ -4,8 +4,6 @@ import fpc.aoc.api.AOCProblem;
 import fpc.aoc.common.NotSolvedYet;
 import lombok.NonNull;
 
-import java.util.stream.Stream;
-
 public class Day16Part1Solver extends Day16Solver {
 
     public static @NonNull AOCProblem<?> provider() {
@@ -13,12 +11,10 @@ public class Day16Part1Solver extends Day16Solver {
     }
 
     @Override
-    public boolean isSkipped() {
-        return true;
-    }
+    public @NonNull Long solve(@NonNull Network network) {
 
-    @Override
-    public @NonNull String solve(@NonNull Stream<String> input) {
+        network.simplify();
+        network.dump();
         throw new NotSolvedYet();
     }
 }

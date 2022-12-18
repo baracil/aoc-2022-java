@@ -144,7 +144,7 @@ public class Chamber {
           && notMatch(0b1111000)
           ;
     }
-    
+
     public void setRock(int x) {
       final var s = 1<<x;
       this.rocks |=s;

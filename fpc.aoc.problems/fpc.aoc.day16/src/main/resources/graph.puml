@@ -1,0 +1,118 @@
+@startdot
+graph valves {
+DD [label="DD\n8"]
+LL [label="LL\n5"]
+HN [label="HN\n0"]
+HS [label="HS\n0"]
+LY [label="LY\n21"]
+UC [label="UC\n25"]
+QD [label="QD\n14"]
+UR [label="UR\n0"]
+QO [label="QO\n0"]
+YY [label="YY\n0"]
+AA [label="AA\n0"]
+EF [label="EF\n0"]
+EJ [label="EJ\n0"]
+IR [label="IR\n9"]
+IS [label="IS\n0"]
+IT [label="IT\n0"]
+IV [label="IV\n0"]
+EU [label="EU\n19"]
+IZ [label="IZ\n0"]
+ZK [label="ZK\n0"]
+VH [label="VH\n10"]
+VJ [label="VJ\n0"]
+ZS [label="ZS\n0"]
+RK [label="RK\n0"]
+JD [label="JD\n0"]
+NJ [label="NJ\n6"]
+FF [label="FF\n0"]
+VW [label="VW\n0"]
+RV [label="RV\n0"]
+NV [label="NV\n0"]
+BM [label="BM\n0"]
+JV [label="JV\n0"]
+SA [label="SA\n0"]
+JZ [label="JZ\n0"]
+WG [label="WG\n0"]
+WI [label="WI\n0"]
+SG [label="SG\n0"]
+OC [label="OC\n18"]
+WL [label="WL\n12"]
+SI [label="SI\n0"]
+SK [label="SK\n0"]
+KD [label="KD\n0"]
+GC [label="GC\n0"]
+KH [label="KH\n13"]
+ON [label="ON\n0"]
+SS [label="SS\n17"]
+GQ [label="GQ\n0"]
+TA [label="TA\n0"]
+CP [label="CP\n24"]
+XF [label="XF\n0"]
+PC [label="PC\n22"]
+PN [label="PN\n0"]
+DD -- GQ
+DD -- YY
+DD -- JV
+DD -- SK
+LL -- ZS
+LL -- IT
+LL -- SK
+LL -- IS
+LL -- WG
+HN -- FF
+HN -- CP
+HS -- OC
+HS -- PN
+LY -- EF
+LY -- FF
+LY -- UR
+LY -- JZ
+UC -- JD
+UC -- IV
+QD -- XF
+QD -- UR
+QO -- AA
+QO -- VH
+YY -- AA
+AA -- NV
+AA -- GC
+AA -- IS
+EF -- WL
+EJ -- WL
+EJ -- CP
+IR -- JZ
+IR -- WI
+IR -- VJ
+IR -- GC
+IR -- WG
+IT -- VW
+IV -- ZK
+EU -- GQ
+IZ -- SS
+IZ -- JD
+ZK -- CP
+VH -- VW
+VH -- RV
+VH -- PN
+VJ -- TA
+ZS -- KD
+RK -- SS
+RK -- JV
+NJ -- RV
+NJ -- KD
+NJ -- SG
+NJ -- SI
+NJ -- TA
+NV -- SG
+BM -- SA
+BM -- WL
+SA -- KH
+WI -- SS
+WL -- XF
+SI -- SS
+KH -- ON
+ON -- PC
+}
+@enddot
