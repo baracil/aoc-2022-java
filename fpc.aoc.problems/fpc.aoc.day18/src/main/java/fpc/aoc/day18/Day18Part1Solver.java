@@ -1,10 +1,8 @@
 package fpc.aoc.day18;
 
+import com.google.common.collect.ImmutableSet;
 import fpc.aoc.api.AOCProblem;
-import fpc.aoc.common.NotSolvedYet;
 import lombok.NonNull;
-
-import java.util.stream.Stream;
 
 public class Day18Part1Solver extends Day18Solver {
 
@@ -13,12 +11,7 @@ public class Day18Part1Solver extends Day18Solver {
     }
 
     @Override
-    public boolean isSkipped() {
-        return true;
-    }
-
-    @Override
-    public @NonNull String solve(@NonNull Stream<String> input) {
-        throw new NotSolvedYet();
+    public @NonNull Integer solve(@NonNull ImmutableSet<Face> input) {
+        return input.size();
     }
 }

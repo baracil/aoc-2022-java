@@ -1,24 +1,24 @@
 package fpc.aoc.day18;
 
+import com.google.common.collect.ImmutableSet;
 import fpc.aoc.api.AOCProblem;
-import fpc.aoc.common.NotSolvedYet;
 import lombok.NonNull;
 
-import java.util.stream.Stream;
-
+//4126 to high
 public class Day18Part2Solver extends Day18Solver {
 
-    public static @NonNull AOCProblem<?> provider() {
-        return new Day18Part2Solver().createProblem();
-    }
+  public static @NonNull AOCProblem<?> provider() {
+    return new Day18Part2Solver().createProblem();
+  }
 
-    @Override
-    public boolean isSkipped() {
-        return true;
-    }
 
-    @Override
-    public @NonNull String solve(@NonNull Stream<String> input) {
-        throw new NotSolvedYet();
-    }
+  @Override
+  public @NonNull Integer solve(@NonNull ImmutableSet<Face> faces) {
+    final var classifier = new Expander(faces);
+    final var touchedFaces = classifier.expand();
+
+    return touchedFaces.size();
+  }
+
+
 }
