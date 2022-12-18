@@ -30,8 +30,6 @@ public class VideoSystem {
       }
       final var st = cycle * x;
       signalStrength.add(st);
-      System.out.printf("cycle:%03d  x:%2d  st:%d", cycle, x, st);
-      System.out.println();
 
       if (nbCycleBeforeExecution == 0) {
         pending = commandProvider.takeCommand().orElse(null);

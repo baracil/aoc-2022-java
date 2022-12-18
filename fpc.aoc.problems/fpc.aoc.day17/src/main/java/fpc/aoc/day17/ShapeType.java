@@ -12,7 +12,7 @@ import lombok.Getter;
 
 @Getter
 public enum ShapeType {
-  HBAR("DCCE"),
+  HBAR("####"),
   VBAR("""
       #
       #

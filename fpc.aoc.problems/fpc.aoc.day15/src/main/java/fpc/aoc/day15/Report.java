@@ -26,6 +26,7 @@ public class Report {
   public long computePart2(int sup) {
     final var lst = IntStream.rangeClosed(0,sup)
         .mapToObj(i -> this.lineCoverage(i, l -> l.doesNotFullyCover(0,sup)))
+        .parallel()
         .filter(l -> !l.isEmpty())
         .findAny().orElseThrow(() -> new AOCException("Cannot solve this"));
     return lst.get(0).lineIndex() + (lst.get(0).sup()+1)*4000000L;
