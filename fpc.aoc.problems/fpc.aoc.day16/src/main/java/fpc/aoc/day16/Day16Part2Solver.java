@@ -12,6 +12,8 @@ public class Day16Part2Solver extends Day16Solver {
 
   @Override
   public @NonNull Long solve(@NonNull Network network) {
-    throw new NotSolvedYet();
+    final var step = PathFinderPart2.findBest(network);
+    step.dump(System.out);
+    return (long)step.totalVent();
   }
 }

@@ -1,7 +1,6 @@
 package fpc.aoc.day16;
 
 import fpc.aoc.api.AOCProblem;
-import fpc.aoc.common.NotSolvedYet;
 import lombok.NonNull;
 
 public class Day16Part1Solver extends Day16Solver {
@@ -12,9 +11,7 @@ public class Day16Part1Solver extends Day16Solver {
 
     @Override
     public @NonNull Long solve(@NonNull Network network) {
-
-        network.simplify();
-        network.dump();
-        throw new NotSolvedYet();
+        final var step = PathFinderPart1.findBest(network);
+        return (long)step.totalVent();
     }
 }

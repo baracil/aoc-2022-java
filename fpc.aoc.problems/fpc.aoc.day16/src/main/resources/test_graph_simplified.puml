@@ -1,11 +1,11 @@
 @startdot
 graph valves {
-BB [label="BB\n13"]
-DD [label="DD\n20"]
+BB [label="BB\n13\n3-O"]
+DD [label="DD\n20\n1-O"]
 HH [label="HH\n22"]
 JJ [label="JJ\n21"]
 AA [label="AA\n0"]
-CC [label="CC\n2"]
+CC [label="CC\n2\n2"]
 EE [label="EE\n3"]
 AA -- JJ [label="2"]
 AA -- DD [label="1"]

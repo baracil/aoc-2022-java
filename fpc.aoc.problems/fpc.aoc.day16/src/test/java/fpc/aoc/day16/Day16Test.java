@@ -28,7 +28,7 @@ public class Day16Test {
     @Test
     public void testPart2() {
         final var actual = new Day16Part2Solver().createProblem(TEST_INPUT).solve();
-        Assertions.assertEquals(Tools.TODO(),actual);
+        Assertions.assertEquals(1707,actual);
     }
 
 
