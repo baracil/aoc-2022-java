@@ -12,18 +12,24 @@ import java.io.PrintStream;
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 public class Launcher {
 
+    public static void launch(@NonNull AOCProblem<?> problem,boolean verbose) {
+        new Launcher(problem).launch(verbose);
+    }
+
     public static void launch(@NonNull AOCProblem<?> problem) {
-        new Launcher(problem).launch();
+        launch(problem,true);
     }
 
     @NonNull
     @Getter
     private final AOCProblem<?> problem;
 
-    private void launch() {
+    private void launch(boolean verbose) {
         try {
             final Object solution = problem.solve();
-            displayMessage(String.valueOf(solution));
+            if (verbose) {
+                displayMessage(String.valueOf(solution));
+            }
         } catch (NotSolvedYet notSolvedYet) {
             displayMessage("Not solved yet");
         } catch (Throwable t) {

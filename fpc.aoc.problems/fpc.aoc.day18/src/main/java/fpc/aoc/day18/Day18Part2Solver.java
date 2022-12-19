@@ -14,8 +14,8 @@ public class Day18Part2Solver extends Day18Solver {
 
   @Override
   public @NonNull Integer solve(@NonNull ImmutableSet<Face> faces) {
-    final var classifier = new Expander(faces);
-    final var touchedFaces = classifier.expand();
+    final var expander = new Expander(faces);
+    final var touchedFaces = expander.expand();
 
     return touchedFaces.size();
   }

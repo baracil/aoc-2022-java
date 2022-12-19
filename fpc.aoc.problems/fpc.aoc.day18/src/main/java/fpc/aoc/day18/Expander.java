@@ -58,7 +58,7 @@ public class Expander {
             final var face = facePositions.get(half);
             if (face != null) {
               touchedFaces.add(face);
-            } else if (!visited.contains(full) && !outSideLimits(full)) {
+            } else if (!visited.contains(full) && !outsideLimits(full)) {
               toVisit.add(full);
               visited.add(full);
             }
@@ -69,7 +69,7 @@ public class Expander {
     return touchedFaces;
   }
 
-  private boolean outSideLimits(Point p) {
+  private boolean outsideLimits(Point p) {
     return p.x()<=xmin || p.x()>=xmax
         ||p.y()<=ymin || p.y()>=ymax
         ||p.z()<=zmin || p.z()>=zmax;
