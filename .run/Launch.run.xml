@@ -2,7 +2,8 @@
   <configuration default="false" name="Launch" type="Application" factoryName="Application" nameIsGenerated="true">
     <option name="MAIN_CLASS_NAME" value="fpc.aoc.launcher.Launch" />
     <module name="aoc-launcher" />
-    <option name="PROGRAM_PARAMETERS" value="18 2" />
+    <option name="PROGRAM_PARAMETERS" value="16 2" />
+    <option name="VM_PARAMETERS" value="-Xmx32G" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>
