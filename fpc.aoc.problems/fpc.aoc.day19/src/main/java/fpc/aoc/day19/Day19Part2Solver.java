@@ -1,7 +1,6 @@
 package fpc.aoc.day19;
 
 import fpc.aoc.api.AOCProblem;
-import fpc.aoc.common.NotSolvedYet;
 import lombok.NonNull;
 
 import java.util.stream.Stream;
@@ -12,13 +11,18 @@ public class Day19Part2Solver extends Day19Solver {
         return new Day19Part2Solver().createProblem();
     }
 
-    @Override
-    public boolean isSkipped() {
-        return true;
-    }
 
     @Override
-    public @NonNull String solve(@NonNull Stream<String> input) {
-        throw new NotSolvedYet();
+    public @NonNull Long solve(@NonNull Stream<BluePrint> input) {
+        return input
+            .limit(3)
+            .parallel()
+            .mapToLong(this::compute)
+            .reduce(1,(a,b) -> a*b);
     }
+
+    private long compute(@NonNull BluePrint bluePrint) {
+        return Factory.findBest(bluePrint,32).nbGeode();
+    }
+
 }

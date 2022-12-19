@@ -28,5 +28,10 @@
             <groupId>fpc.aoc2022</groupId>
             <artifactId>aoc-input</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.ojalgo</groupId>
+            <artifactId>ojalgo</artifactId>
+            <version>49.2.1</version>
+        </dependency>
     </dependencies>
 </project>

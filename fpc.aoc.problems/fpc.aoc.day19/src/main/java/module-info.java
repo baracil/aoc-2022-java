@@ -7,6 +7,7 @@ module fpc.aoc.day19 {
 
     requires com.google.common;
     requires fpc.aoc.input;
+    requires ojalgo;
 
     exports fpc.aoc.day19;
 
