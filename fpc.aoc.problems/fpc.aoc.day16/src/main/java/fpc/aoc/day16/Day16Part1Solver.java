@@ -10,8 +10,7 @@ public class Day16Part1Solver extends Day16Solver {
     }
 
     @Override
-    public @NonNull Long solve(@NonNull Network network) {
-        final var step = PathFinderPart1.findBest(network);
-        return (long)step.totalVent();
+    public @NonNull Long solve(@NonNull Valves input) {
+        return null;
     }
 }
