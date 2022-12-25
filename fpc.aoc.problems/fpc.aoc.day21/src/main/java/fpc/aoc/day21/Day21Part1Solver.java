@@ -1,24 +1,20 @@
 package fpc.aoc.day21;
 
 import fpc.aoc.api.AOCProblem;
-import fpc.aoc.common.NotSolvedYet;
 import lombok.NonNull;
 
-import java.util.stream.Stream;
-
-public class Day21Part1Solver extends Day21Solver {
+public class Day21Part1Solver extends Day21Solver<Long> {
 
     public static @NonNull AOCProblem<?> provider() {
         return new Day21Part1Solver().createProblem();
     }
 
-    @Override
-    public boolean isSkipped() {
-        return true;
+    public Day21Part1Solver() {
+        super(new MonkeyEvaluatorPart1());
     }
 
     @Override
-    public @NonNull String solve(@NonNull Stream<String> input) {
-        throw new NotSolvedYet();
+    protected Long finalize(Long rootResult) {
+        return rootResult;
     }
 }
