@@ -1,27 +1,24 @@
 package fpc.aoc.day22;
 
-import fpc.aoc.common.AOCException;
-import fpc.aoc.common.ArrayOfChar;
-import fpc.aoc.common.Displacement;
 import fpc.aoc.common.Position;
 import lombok.Value;
 
 @Value
 public class Player {
 
-    private final Position position;
-    private final Orientation orientation;
+    Position position;
+    Orientation orientation;
 
     public Player move(Map map, int nbSteps) {
-        var current = position;
+        var current = new Move(position,orientation);
         for (int i = 0; i < nbSteps; i++) {
-            final var next = map.next(current, orientation);
-            if (map.isWall(next)) {
+            final var next = map.next(current.position(), current.orientation());
+            if (map.isWall(next.position())) {
                 break;
             }
             current = next;
         }
-        return new Player(current,orientation);
+        return new Player(current.position(),current.orientation());
     }
 
     public Player rotateR() {

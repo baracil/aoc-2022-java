@@ -31,7 +31,7 @@ public class Day22Test {
     @Test
     public void testPart2() {
         final var actual = new Day22Part2Solver().createProblem(TEST_INPUT).solve();
-        Assertions.assertEquals("1924",actual);
+        Assertions.assertEquals(5031,actual);
     }
 
 
