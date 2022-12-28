@@ -1,24 +1,16 @@
 package fpc.aoc.day20;
 
 import fpc.aoc.api.AOCProblem;
-import fpc.aoc.common.NotSolvedYet;
 import lombok.NonNull;
 
-import java.util.stream.Stream;
-
+//too high 5195
 public class Day20Part1Solver extends Day20Solver {
 
     public static @NonNull AOCProblem<?> provider() {
         return new Day20Part1Solver().createProblem();
     }
 
-    @Override
-    public boolean isSkipped() {
-        return true;
-    }
-
-    @Override
-    public @NonNull String solve(@NonNull Stream<String> input) {
-        throw new NotSolvedYet();
+    public Day20Part1Solver() {
+        super(1,1);
     }
 }
