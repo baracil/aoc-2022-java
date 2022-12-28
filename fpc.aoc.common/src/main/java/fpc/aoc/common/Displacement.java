@@ -23,4 +23,12 @@ public class Displacement {
         return new Displacement(dx,dy);
     }
 
+    public Displacement clockwise() {
+        return Displacement.of(-dy,dx);
+    }
+
+    public Displacement antiClockwise() {
+        return Displacement.of(dy,-dx);
+    }
+
 }

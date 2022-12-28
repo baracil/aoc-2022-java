@@ -18,7 +18,7 @@ public class Day22Part2Solver extends Day22Solver {
     }
 
     @Override
-    public @NonNull String solve(@NonNull Stream<String> input) {
-        throw new NotSolvedYet();
+    public @NonNull Long solve(@NonNull Input22 input) {
+        return null;
     }
 }
