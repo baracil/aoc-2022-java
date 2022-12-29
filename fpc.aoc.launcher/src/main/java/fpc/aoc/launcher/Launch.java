@@ -8,7 +8,7 @@ import fpc.aoc.launcher._private.Launcher;
 public class Launch {
 
     public static void main(String[] args) {
-        final double last = bench(new Problem(args),100,100);
+        final double last = bench(new Problem(args),0,1);
         System.out.printf("Last : %.3f ms%n",last);
     }
 
@@ -17,9 +17,10 @@ public class Launch {
             Launcher.launch(problem,false);
         }
         final long start = System.nanoTime();
-        for (int i = 0; i < bench; i++) {
+        for (int i = 0; i < bench-1; i++) {
             Launcher.launch(problem,false);
         }
+        Launcher.launch(problem,true);
         final long last = System.nanoTime() - start;
         return last*1e-6/bench;
 

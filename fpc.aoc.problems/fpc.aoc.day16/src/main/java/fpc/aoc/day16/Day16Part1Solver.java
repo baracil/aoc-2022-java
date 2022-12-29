@@ -11,6 +11,6 @@ public class Day16Part1Solver extends Day16Solver {
 
     @Override
     public @NonNull Long solve(@NonNull Valves input) {
-        return SolverPart1.solve(input);
+        return new Solver(input).solve(0,30);
     }
 }

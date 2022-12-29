@@ -39,7 +39,7 @@ public class Network {
       }
     }
 
-    return new Valves( rates, distances);
+    return new Valves( names, rates, distances);
   }
 
   public int distance(String start, String end) {

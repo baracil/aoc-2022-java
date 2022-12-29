@@ -1,7 +1,6 @@
 package fpc.aoc.day16;
 
 import fpc.aoc.api.AOCProblem;
-import fpc.aoc.common.NotSolvedYet;
 import lombok.NonNull;
 
 public class Day16Part2Solver extends Day16Solver {
@@ -12,6 +11,14 @@ public class Day16Part2Solver extends Day16Solver {
 
   @Override
   public @NonNull Long solve(@NonNull Valves input) {
-    return null;
+    final var solver = new Solver(input);
+    return input.generateBalancedPartitions()
+        .parallel()
+        .mapToLong(p -> {
+          final var r1 = solver.solve(p.first(), 26);
+          final var r2 = solver.solve(p.second(), 26);
+          return r1 + r2;
+        }).max()
+        .orElseThrow();
   }
 }
