@@ -1,9 +1,9 @@
 package fpc.aoc.input;
 
 import com.google.common.collect.ImmutableList;
-import lombok.NonNull;
 import fpc.aoc.common.AOCException;
 import fpc.aoc.common.ArrayOfChar;
+import lombok.NonNull;
 
 import java.util.function.Function;
 import java.util.stream.IntStream;
@@ -33,7 +33,7 @@ public interface Converter<I> extends Function<Stream<String>,I> {
      * @return a converter that apply this converter and then the provided function
      */
     @Override
-    default <V> Converter<V> andThen(Function<? super I, ? extends V> after) {
+    default <V> Converter<V> andThen(@NonNull Function<? super I, ? extends V> after) {
         return s -> after.apply(this.convert(s));
     }
 
@@ -61,4 +61,6 @@ public interface Converter<I> extends Function<Stream<String>,I> {
      * transform the input stream into an array of char (using '.' to fill the spaces)
      */
     Converter<ArrayOfChar> TO_ARRAY_OF_CHAR = s -> s.collect(ArrayOfChar.collector('.'));
+
+    static Converter<ArrayOfChar> toArrayOfChar(char filling) {return s -> s.collect(ArrayOfChar.collector(filling));}
 }
