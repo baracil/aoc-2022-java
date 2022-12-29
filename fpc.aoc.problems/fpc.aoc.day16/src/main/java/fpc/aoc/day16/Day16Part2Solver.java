@@ -14,10 +14,10 @@ public class Day16Part2Solver extends Day16Solver {
     final var solver = new Solver(input);
     return input.generateBalancedPartitions()
         .parallel()
-        .mapToLong(p -> {
-          final var r1 = solver.solve(p.first(), 26);
-          final var r2 = solver.solve(p.second(), 26);
-          return r1 + r2;
+        .mapToLong(partition -> {
+          final var humanTotal = solver.solve(partition.first(), 26);
+          final var elephantTotal = solver.solve(partition.second(), 26);
+          return humanTotal + elephantTotal;
         }).max()
         .orElseThrow();
   }
