@@ -1,9 +1,9 @@
 package fpc.aoc.day25;
 
 import fpc.aoc.api.AOCProblem;
-import fpc.aoc.common.NotSolvedYet;
 import lombok.NonNull;
 
+import java.math.BigInteger;
 import java.util.stream.Stream;
 
 public class Day25Part1Solver extends Day25Solver {
@@ -13,12 +13,8 @@ public class Day25Part1Solver extends Day25Solver {
     }
 
     @Override
-    public boolean isSkipped() {
-        return true;
-    }
-
-    @Override
-    public @NonNull String solve(@NonNull Stream<String> input) {
-        throw new NotSolvedYet();
+    public @NonNull String solve(@NonNull Stream<BigInteger> input) {
+        final var sum = input.reduce(BigInteger.ZERO, BigInteger::add);
+        return Snafu.toSnafu(sum);
     }
 }
